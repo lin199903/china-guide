@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://china-guide-duj.pages.dev/sitemap.xml
+Sitemap: https://338123.xyz/sitemap.xml

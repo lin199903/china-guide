@@ -37,7 +37,7 @@ china-ru-site/
 
 ## 上线前必须替换的占位符
 
-1. **域名**：全站搜索 `https://china-guide-duj.pages.dev`，替换成你的真实域名（index、guides、booking、privacy、sitemap.xml、robots.txt、JSON-LD、og:image）。
+1. **域名**：全站搜索 `https://338123.xyz`，替换成你的真实域名（index、guides、booking、privacy、sitemap.xml、robots.txt、JSON-LD、og:image）。
 2. **Cal.com**：把 `booking.html` 里的 `https://cal.com/china-guide/consultation` 换成你的 Cal.com 用户名/事件类型（如 `https://cal.com/yourname/consultation`）。如果换成自定义域名，把该域名加进 `_headers` 的 `frame-src`。
 3. **Turnstile**：`assets/app.js` 里的 `YOUR_TURNSTILE_SITE_KEY`；服务端环境变量 `TURNSTILE_SECRET`。
 4. **Telegram**：`@china_guide` / `https://t.me/china_guide` 换成你的账号；环境变量 `TELEGRAM_BOT_TOKEN`、`TELEGRAM_CHAT_ID`。
@@ -64,7 +64,7 @@ china-ru-site/
 
 ## 当前线上部署
 
-- 线上地址：https://china-guide-duj.pages.dev/
+- 线上地址：https://338123.xyz/
 - Cloudflare Pages 项目：`china-guide`
 - GitHub：https://github.com/lin199903/china-guide
 - Turnstile widget：`China Guide`（sitekey `0x4AAAAAAF4k8iqlbNltv2uG`，域名 `china-guide-duj.pages.dev`）
