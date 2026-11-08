@@ -107,6 +107,12 @@
     status.className = "form-status" + (kind ? " " + kind : "");
   }
 
+  var submitButton = form.querySelector('button[type="submit"]');
+  if (!hasCaptcha) {
+    submitButton.disabled = true;
+    setStatus("Онлайн-форма временно недоступна. Напишите в Telegram.", "");
+  }
+
   window.addEventListener("load", function () {
     if (!hasCaptcha || !window.turnstile) return;
     widgetId = window.turnstile.render("#turnstile", {
@@ -118,6 +124,10 @@
 
   form.addEventListener("submit", async function (event) {
     event.preventDefault();
+    if (!hasCaptcha) {
+      setStatus("Онлайн-форма временно недоступна. Напишите в Telegram.", "error");
+      return;
+    }
     var data = new FormData(form);
     var payload = {
       name: String(data.get("name") || "").trim(),
