@@ -19,15 +19,7 @@ const types = {
   ".ico": "image/x-icon"
 };
 
-const server = http.createServer((req, res) => {
-  const urlPath = decodeURIComponent((req.url || "/").split("?")[0]);
-  let relative = urlPath;
-  if (relative === "/" || relative === "") relative = "/index.html";
-  if (relative.endsWith("/")) relative += "index.html";
-
-  const safe = path.normalize(relative).replace(/^(\.\.[\/\\])+/, "");
-  const file = path.join(root, safe);
-
+function sendFile(res, file) {
   fs.readFile(file, (err, data) => {
     if (err) {
       res.writeHead(404, { "content-type": "text/plain; charset=utf-8" });
@@ -39,6 +31,28 @@ const server = http.createServer((req, res) => {
       "cache-control": "no-cache"
     });
     res.end(data);
+  });
+}
+
+const server = http.createServer((req, res) => {
+  const urlPath = decodeURIComponent((req.url || "/").split("?")[0]);
+  let relative = urlPath;
+  if (relative === "/" || relative === "") relative = "/index.html";
+  if (relative.endsWith("/")) relative += "index.html";
+
+  const safe = path.normalize(relative).replace(/^(\.\.[\/\\])+/, "");
+  const file = path.join(root, safe);
+
+  fs.readFile(file, (err) => {
+    if (!err) {
+      sendFile(res, file);
+      return;
+    }
+    if (!path.extname(file)) {
+      sendFile(res, file + ".html");
+      return;
+    }
+    sendFile(res, file);
   });
 });
 
