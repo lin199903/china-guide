@@ -1,0 +1,9 @@
+.gitignore
+.assetsignore
+README.md
+serve.js
+package.json
+package-lock.json
+preview*.png
+node_modules
+.wrangler

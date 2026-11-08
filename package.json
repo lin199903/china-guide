@@ -1,0 +1,10 @@
+{
+  "name": "china-guide",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Russian-language China payment and AI guide with Cloudflare Pages Functions",
+  "scripts": {
+    "dev": "wrangler pages dev .",
+    "deploy": "wrangler pages deploy . --project-name china-guide --branch main"
+  }
+}
