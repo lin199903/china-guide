@@ -70,7 +70,7 @@ china-ru-site/
 - Turnstile widget：`China Guide`（sitekey `0x4AAAAAAF4k8iqlbNltv2uG`，域名 `china-guide-duj.pages.dev`）
 - Telegram：`@chinaguide_alerts_bot`（token 与 chat id 已存到 Pages secrets，不在代码里）
 - 表单：已启用 Turnstile + Telegram 通知
-- Cal.com：仍是占位链接，预约页显示 Telegram 兜底；替换后即可用
+- Cal.com：已接入 `https://cal.com/junyi-lin-vnyejw/30min`（30 分钟，Asia/Shanghai），60 分钟按需在 Telegram 约定
 
 更新部署：
 
