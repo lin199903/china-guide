@@ -98,7 +98,7 @@
   var status = document.getElementById("form-status");
 
   // Replace with the Turnstile site key from the Cloudflare dashboard.
-  var SITE_KEY = "YOUR_TURNSTILE_SITE_KEY";
+  var SITE_KEY = "0x4AAAAAAF4k8iqlbNltv2uG";
   var hasCaptcha = SITE_KEY.indexOf("YOUR_") !== 0 && SITE_KEY.length > 10;
   var widgetId = null;
 
