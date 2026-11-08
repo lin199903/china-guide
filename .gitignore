@@ -4,3 +4,6 @@ node_modules/
 .DS_Store
 preview*.png
 *-tmp.js
+cf-*.js
+*token*.txt
+.env
