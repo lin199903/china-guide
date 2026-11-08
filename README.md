@@ -62,6 +62,26 @@ china-ru-site/
 4. 在 Cal.com 里设置可用时区、缓冲时间、取消政策；可选 Stripe 收款（注意目标用户支付方式）。
 5. 测试 iframe 在桌面/移动端是否加载；如果被 CSP 拦截，检查 `_headers` 的 `frame-src`。
 
+## 当前线上部署
+
+- 线上地址：https://china-guide-duj.pages.dev/
+- Cloudflare Pages 项目：`china-guide`
+- GitHub：https://github.com/lin199903/china-guide
+- Turnstile widget：`China Guide`（sitekey `0x4AAAAAAF4k8iqlbNltv2uG`，域名 `china-guide-duj.pages.dev`）
+- Telegram：`@chinaguide_alerts_bot`（token 与 chat id 已存到 Pages secrets，不在代码里）
+- 表单：已启用 Turnstile + Telegram 通知
+- Cal.com：仍是占位链接，预约页显示 Telegram 兜底；替换后即可用
+
+更新部署：
+
+```powershell
+cd C:\同花顺软件\china-ru-site
+git add .
+git commit -m "update"
+git push
+npx wrangler pages deploy . --project-name china-guide --branch main
+```
+
 ## 预览图
 
 - `preview-guide.png` — статья Nihao China (desktop)
